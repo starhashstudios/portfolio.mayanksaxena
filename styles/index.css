@@ -1,0 +1,273 @@
+/* Default elements styling */
+body {
+    margin: 0px;
+    user-select: none;
+}
+
+/* Custom elements styling */
+.ms-container {
+    background-color: black;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.ms-nav-top {
+    height: 48px;
+    background-color: #222222;
+}
+
+.ms-nav-top-title {
+    display: inline-flex;
+    height: 48px;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+
+.ms-nav-top-title:hover {
+    background-color: black;
+}
+
+.ms-nav-top-title-mayank {
+    font-family: 'Roboto Black';
+    color: white;
+    font-size: 24px;
+}
+
+.ms-nav-top-title-pipe {
+    font-family: 'Myriad pro';
+    color: white;
+    font-size: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.ms-nav-top-title-saxena {
+    font-family: 'Roboto Thin';
+    color: white;
+    font-size: 24px;
+}
+
+.ms-nav-top-menu {
+    background-color: #111111;
+    display: inline-flex;
+    float: right;
+}
+
+.ms-nav-top-menu-button {
+    background-color: transparent;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 20px;
+    font-family: 'Roboto black';
+    color: #888888;
+    cursor: pointer;
+
+    -webkit-transition: background .2s ease-in, color .2s ease-in;
+    -moz-transition: background .2s ease-in, color .2s ease-in;
+    transition: background .2s ease-in, color .2s ease-in;
+}
+
+.ms-nav-top-menu-button:hover {
+    color: #2381D5;
+    background-color: white;
+}
+
+.ms-nav-top-menu-flyout {
+    position: absolute;
+    right: 0;
+    height: max-content;
+    top: 48;
+    background-color: white;
+    font-size: 14px;
+    width: 197px;
+}
+
+.ms-nav-top-menu-flyout-collapsed {
+    display: none;
+}
+
+.ms-nav-top-menu-flyout > ul {
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+}
+
+.ms-nav-top-menu-flyout-title {
+    font-family: 'Roboto';
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #2381D5;
+    cursor: default;
+}
+
+.ms-nav-top-menu-flyout > ul li:not(:first-child) {
+    font-family: 'Roboto';
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #2381D5;
+    width: 165px;
+
+    -webkit-transition: color .4s ease-in;
+    -moz-transition: color .4s ease-in;
+    transition: color .4s ease-in;
+}
+
+.ms-nav-top-menu-flyout > ul li:not(:first-child):hover {
+    background-color: #2381D5;
+    color: white;
+}
+
+.ms-timeline-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 46px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: inline-flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    opacity: 0.75;
+
+    -webkit-transition: opacity .2s ease, height .4s ease;
+    -moz-transition: opacity .2s ease, height .4s ease;
+    transition: opacity .2s ease, height .4s ease;
+}
+
+.ms-timeline-bottom:hover {
+    opacity: 1.0;
+    height: 132px;
+    overflow-x: auto;
+}
+
+.ms-timeline-bottom-pinned {
+    opacity: 1.0;
+    height: 132px;
+    overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+    margin-right: -1px;
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2381D5;
+}
+
+.ms-timeline-item {
+    display: inline-flex;
+    padding: 8px;
+    width: 180px;
+    cursor: pointer;
+    
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+
+.ms-timeline-item:hover {
+    background-color: black;
+}
+
+.ms-timeline-item-title {
+    font-family: 'Roboto';
+    font-size: 12px;
+    position: absolute;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-bottom: 32px;
+    width: 164px;
+    
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+
+.ms-timeline-item:hover .ms-timeline-item-title {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ms-timeline-item-title-now-showing {
+    background-color: rgba(35, 129, 213, 0.75);
+}
+
+.ms-timeline-item-background {
+    width: 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+.ms-timeline-slideshow {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+    height: calc(100vh - 48px);
+    width: 100%;
+
+    -webkit-transition: background .4s ease-in-out;
+    -moz-transition: background .4s ease-in-out;
+    transition: background .4s ease-in-out;
+}
+
+.ms-timeline-bottom-button {
+    position: fixed;
+    margin-top: -20px;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    outline: none;
+    transform: rotate(-90deg);
+
+    -webkit-transition: transform .2s ease;
+    -moz-transition: transform .2s ease;
+    transition: transform .2s ease;
+}
+
+.ms-timeline-bottom-button:hover {
+    background-color: #2381D5;
+    transform: rotate(0deg);
+}
+
+.ms-timeline-bottom-button-pinned {
+    position: fixed;
+    margin-top: -20px;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    outline: none;
+    transform: rotate(0deg);
+
+    -webkit-transition: transform .2s ease;
+    -moz-transition: transform .2s ease;
+    transition: transform .2s ease;
+}
+
+.ms-timeline-bottom-button-pinned:hover {
+    background-color: #2381D5;
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="scripts/angular.js"></script>
+        <script src="scripts/index.js"></script>
+        <link rel="stylesheet" href="styles/index.css" />
+        <link rel="stylesheet" href="styles/animate.css" />
+    </head>
+    <body ng-app="ms">
+        <div class="ms-container" ng-controller="msController">
+            <div class="ms-nav-top">
+                <div class="ms-nav-top-title animate fadeIn">
+                    <span class="ms-nav-top-title-mayank">MAYANK</span>
+                    <span class="ms-nav-top-title-pipe">|</span>
+                    <span class=ms-nav-top-title-saxena>SAXENA</span>
+                </div>
+                <div class="ms-nav-top-menu">
+                    <div class="ms-nav-top-menu-button"
+                        ng-repeat="menuItem in navTopMenuItems"
+                        ng-init="over = false;"
+                        ng-mouseover="over = true;"
+                        ng-mouseleave="over = false;">
+                        {{menuItem.name}}
+                        <div class="ms-nav-top-menu-flyout"
+                            ng-class="{
+                                'ms-nav-top-menu-flyout-collapsed': !over,
+                                'fadeIn animate': over
+                            }">
+                            <ul>
+                                <li class="ms-nav-top-menu-flyout-title">{{menuItem.title}}</li>
+                                <li ng-repeat="subItem in menuItem.items">{{subItem.name}}</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="ms-timeline-slideshow"
+                    ng-style="{ 'background-image': 'url(images/' + currentImage + ')' }"></div>
+                <div class="ms-timeline-bottom" ng-class="{ 'ms-timeline-bottom-pinned': timelinePinned }">
+                    <div ng-repeat="item in timelineItems"
+                        class="ms-timeline-item"
+                        ng-mouseover="setCurrentSlideshow(item.image);">
+                        <div class="ms-timeline-item-background"
+                            ng-style="{ 'background-image': 'url(images/' + item.image + ')' }"></div>
+                        <div class="ms-timeline-item-title"
+                            ng-class="{ 'ms-timeline-item-title-now-showing': currentImage == item.image }">
+                            {{item.title}}
+                        </div>
+                    </div>
+                    <button ng-class="{
+                            'ms-timeline-bottom-button-pinned': timelinePinned,
+                            'ms-timeline-bottom-button': !timelinePinned
+                        }"
+                        ng-click="timelinePinned = !timelinePinned;">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" style="fill: rgba(255, 255, 255, 0.75);" viewBox="0 0 24 24"><path d="M11 17h2v5l-2 2v-7zm3.571-12c0-2.903 2.36-3.089 2.429-5h-10c.068 1.911 2.429 2.097 2.429 5 0 3.771-3.429 3.291-3.429 10h12c0-6.709-3.429-6.229-3.429-10z"/></svg></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
